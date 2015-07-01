@@ -37,21 +37,7 @@
 
             </div>
 
-            <div id="navigation">
-                <ul id="nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Coffee</a>
-                        <ul>
-                            <li><a href="#">Regular</a></li>
-                            <li><a href="#">Espresso</a></li>
-                            <li><a href="#">Latte</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Shop</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </div>
-
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server"></asp:ContentPlaceHolder>
             <div id="content_area">
 
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">

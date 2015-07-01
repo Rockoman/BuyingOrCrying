@@ -33,11 +33,15 @@ public partial class Registration : System.Web.UI.Page
         {
             try
             {
+                //create GUID
+                Guid newGUID = Guid.NewGuid();
+                
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["RegistrationConnectionString"].ConnectionString);
                 conn.Open();
                 //insert query
-                string insertQuery = "insert into UserData (UserName, EMail, Password, Age) values (@uname, @email, @pass, @age)";
+                string insertQuery = "insert into UserData (Id, UserName, EMail, Password, Age) values (@ID, @uname, @email, @pass, @age)";
                 SqlCommand com = new SqlCommand(insertQuery, conn);
+                com.Parameters.AddWithValue("ID", newGUID.ToString());
                 com.Parameters.AddWithValue("@uname", txt_userName.Text);
                 com.Parameters.AddWithValue("@email", txt_eMail.Text);
                 com.Parameters.AddWithValue("@pass", txt_password.Text);

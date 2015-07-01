@@ -117,3 +117,16 @@
     padding: 4px;
 }
 
+#login{
+    border-radius: 25px;
+    border: 2px solid #12385D;
+    background-color: #233B52;
+    margin-top: 10px;
+    
+}
+
+#loginText{
+    color: #90A7C8;
+    margin: 25px 0 0 15px;
+    height: 82px;
+}

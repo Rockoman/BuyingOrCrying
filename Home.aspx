@@ -31,7 +31,50 @@ Pellentesque vel velit sodales, lobortis felis eget, feugiat felis. Nulla vestib
 </asp:Content>
 
 <asp:Content ID="Content2" runat="server" contentplaceholderid="ContentPlaceHolder2">
+
+    <div id="login" style="height: 127px; text-align: right;">
+    <div id ="loginText">
+
+        <table style="width: 100%">
+            <tr>
+                <td>Username</td>
+                <td style="text-align: left">
+                    <asp:TextBox ID="userName" runat="server" Width="85px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td style="text-align: left">
+                    <asp:TextBox ID="password" runat="server" Width="85px" TextMode="Password"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Registration.aspx">Register</asp:HyperLink>
+                </td>
+                <td>
+                    <asp:Button ID="btn_login" runat="server" Text="Login" style="float:left;" OnClick="btn_login_Click" Width="88px" />
+                </td>
+            </tr>
+        </table>
+
+        <table style="width: 100%; height: 99px">
+            <tr>
+                <td style="text-align: left; height: 97px">
+                    <asp:Label ID="lbl_confirm" runat="server" style="text-align: left" ForeColor="#FF3300"></asp:Label>
+                    <br />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="userName" ErrorMessage="Enter a username." ForeColor="#FF3300"></asp:RequiredFieldValidator>
+                    <br />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="password" ErrorMessage="Please enter a password." ForeColor="#FF3300"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: left; height: 38px">&nbsp;</td>
+            </tr>
+        </table>
+
+    </div>
+</div>
  
 </asp:Content>
-
 
