@@ -49,7 +49,7 @@ public partial class Registration : System.Web.UI.Page
 
                 //execute query
                 com.ExecuteNonQuery();
-                Response.Redirect("Manager.aspx");
+                Response.Redirect("Dash.aspx");
                 Response.Write("Registration is successful!");
 
                 conn.Close();

@@ -12,12 +12,15 @@
 }
 
 #banner{
-    height: 200px;
+    height: 133px;
     border: 3px solid #E3E3E3;
-    background-image: url(../Images/italian.jpg);
-    background-repeat: no-repeat;
+    background-image: url(../Images/banner.png);
+
     background-size: cover;
+    background-repeat: no-repeat;
+
 }
+
 
 #navigation{
     height: 60px;
@@ -68,16 +71,17 @@
 
 #content_area{
     float: left;
-    width: 750px;
+    width: 800px;
     margin: 20px 0 20px 0;
     padding: 10px;
     border: 3px solid #E3E3E3;
+    overflow: scroll;
 }
 
 #sidebar{
     float: right;
-    width: 250px;
-    height: 400px;
+    width: 225px;
+    height: 360px;
     margin: 20px 10px 20px 10px;
     border: 3px solid #E3E3E3;
 }
@@ -129,4 +133,30 @@
     color: #90A7C8;
     margin: 25px 0 0 15px;
     height: 82px;
+}
+
+.newhead{
+    text-align: center;
+    color: #BFCEE4;
+    background-color: #374F66;
+}
+
+#profileheader{
+    width: auto;
+    height: auto;
+    border: 5px solid #90A7C8;
+    text-align: center;
+}
+
+#profileinformation{
+    background-color: #374F66;
+    align-content: center;
+    color: #E3E3E3;
+}
+
+.profilesurround{
+    border: 3px solid white;
+    background-color: #3F5E8B;
+    color: #BFCEE4;
+    
 }

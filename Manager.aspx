@@ -23,6 +23,17 @@
     </asp:GridView>
 
     <asp:SqlDataSource ID="SqlDataSourceRegistration" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" SelectCommand="SELECT * FROM [UserData]"></asp:SqlDataSource>
+    <br />
+    <asp:GridView ID="GridView2" runat="server" DataSourceID="SqlDataSourceBOC">
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSourceBOC" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" SelectCommand="SELECT UserData.UserName, BuyOrCry.BuyingOrCrying, BuyOrCry.[Where], BuyOrCry.Type, BuyOrCry.Site FROM UserData INNER JOIN BuyOrCry ON UserData.UserName = BuyOrCry.UserName"></asp:SqlDataSource>
+    <br />
+
+    <br />
+    <br />
+
+
+
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" Runat="Server">

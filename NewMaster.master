@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="NewMaster.master.cs" Inherits="NewMaster" %>
 
 <!DOCTYPE html>
 
@@ -40,6 +40,22 @@
             </a>
 
             <asp:ContentPlaceHolder ID="ContentPlaceHolder3" runat="server"></asp:ContentPlaceHolder>
+            <div id="navigation">
+                <ul id="nav">
+                    <li><a href="Dash.aspx">Home</a></li>
+                    <li><a href="#">Tickets</a>
+                        <ul>
+                            <li><a href="BuyCry.aspx">Submit</a></li>
+                            <li><a href="Tickets.aspx">View</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Messages</a></li>
+                    <li><a href="#">Reviews</a></li>
+                        <ul>
+                            <li><a href="#"></a></li>
+                        </ul>
+                </ul>
+            </div>
             <div id="content_area">
 
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
