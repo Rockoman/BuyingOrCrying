@@ -7,19 +7,24 @@
     <div id="profileheader">
         <asp:Label ID="lbl_profilehead" runat="server" Font-Bold="True" Font-Italic="True" ForeColor="#E3E3E3"></asp:Label>
     </div>
+    <br />
+    <br />
 
     <div id="profileinformation">
 
+        
 
-        <table style="width: 99; color: black;" align="center">
+    <br />
+    <br />
+        <table style="color: black;">
             <tr>
                 <td style="height: 23px; width: 99px; text-align: left">City</td>
                 <td style="height: 23px; width: 183px">
                     <asp:Label ID="lbl_city" runat="server" ForeColor="#E3E3E3"></asp:Label>
                 </td>
-                <td style="height: 23px; text-align: left; width: 112px">Ethnicity</td>
+                <td style="height: 23px; text-align: left; width: 109px">Zip</td>
                 <td style="height: 23px">
-                    <asp:Label ID="lbl_ethnic" runat="server" ForeColor="#E3E3E3"></asp:Label>
+                    <asp:Label ID="lbl_zip" runat="server" ForeColor="#E3E3E3"></asp:Label>
                 </td>
             </tr>
             <tr>
@@ -27,7 +32,7 @@
                 <td style="width: 183px">
                     <asp:Label ID="lbl_state" runat="server" ForeColor="#E3E3E3"></asp:Label>
                 </td>
-                <td style="text-align: left; width: 112px">Smoke</td>
+                <td style="text-align: left; width: 109px">Smoke</td>
                 <td>
                     <asp:Label ID="lbl_smoker" runat="server" ForeColor="#E3E3E3"></asp:Label>
                 </td>
@@ -37,31 +42,49 @@
                 <td style="width: 183px">
                     <asp:Label ID="lbl_profession" runat="server" ForeColor="#E3E3E3"></asp:Label>
                 </td>
-                <td style="text-align: left; width: 112px">Drink</td>
+                <td style="text-align: left; width: 109px">Drink</td>
                 <td>
                     <asp:Label ID="lbl_drinker" runat="server" ForeColor="#E3E3E3"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td style="width: 99px; text-align: left">Religion</td>
-                <td style="width: 183px">
+                <td style="width: 99px; text-align: left; height: 20px;">Religion</td>
+                <td style="width: 183px; height: 20px;">
                     <asp:Label ID="lbl_religion" runat="server" ForeColor="#E3E3E3"></asp:Label>
                 </td>
-                <td style="text-align: left; width: 112px">Favorite Food</td>
-                <td>
+                <td style="text-align: left; width: 109px; height: 20px;">Favorite Food</td>
+                <td style="height: 20px">
                     <asp:Label ID="lbl_food" runat="server" ForeColor="#E3E3E3"></asp:Label>
                 </td>
             </tr>
             <tr>
-                <td style="width: 99px; text-align: left; height: 23px;"></td>
-                <td style="width: 183px; height: 23px;"></td>
-                <td style="text-align: left; width: 112px; height: 23px;"></td>
-                <td style="height: 23px"></td>
+                <td style="width: 99px; text-align: left; height: 25px;">Ethnicity</td>
+                <td style="width: 183px; height: 25px;">
+                    <asp:Label ID="lbl_ethnic" runat="server" ForeColor="#E3E3E3"></asp:Label>
+                </td>
+                <td style="text-align: left; width: 109px; height: 25px;">Age</td>
+                <td style="border-style: none; border-color: inherit; border-width: medium; height: 25px; ">
+                    <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" DataSourceID="SqlDataSourceProfileInformation" ForeColor="#E3E3E3" Height="20px" Width="123px" BorderStyle="None">
+                        <Fields >
+                                <asp:BoundField DataField="Age" SortExpression="Age" ApplyFormatInEditMode="True" ShowHeader="False" >
+                                <ControlStyle BorderStyle="None" />
+                                <FooterStyle BorderStyle="None" />
+                                <HeaderStyle BorderStyle="None" />
+                                <ItemStyle BorderStyle="None" />
+                                </asp:BoundField>
+                        </Fields>
+                    </asp:DetailsView>
+                </td>
             </tr>
         </table>
+
+        <br/>
+        <div class="aboutyou">
+        <asp:Label ID="lbl_aboutyou" runat="server"></asp:Label>
+        </div>
         <br />
         <br />
-        <asp:SqlDataSource ID="SqlDataSourceProfileInformation" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" SelectCommand="SELECT ProfileInformation.Name, UserData.Age, ProfileInformation.City, ProfileInformation.State, ProfileInformation.Profession, ProfileInformation.Religion, ProfileInformation.Ethnicity, ProfileInformation.Smoke, ProfileInformation.Drink, ProfileInformation.FavoriteFood, ProfileInformation.Heading, ProfileInformation.Description, ProfileInformation.UserName, ProfileInformation.Zip FROM UserData INNER JOIN ProfileInformation ON UserData.UserName = ProfileInformation.UserName"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSourceProfileInformation" runat="server" ConnectionString="<%$ ConnectionStrings:RegistrationConnectionString %>" SelectCommand="SELECT Age FROM UserData"></asp:SqlDataSource>
         <br />
         <br />
 

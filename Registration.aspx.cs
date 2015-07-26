@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
 
 public partial class Registration : System.Web.UI.Page
 {
@@ -22,7 +23,7 @@ public partial class Registration : System.Web.UI.Page
             int temp = Convert.ToInt32(com.ExecuteScalar().ToString());
             if (temp == 1)
                 lbl_taken.Text = "That user name is already taken.";
-
+            
 
             conn.Close();
         }
@@ -33,15 +34,11 @@ public partial class Registration : System.Web.UI.Page
         {
             try
             {
-                //create GUID
-                Guid newGUID = Guid.NewGuid();
-                
                 SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["RegistrationConnectionString"].ConnectionString);
                 conn.Open();
                 //insert query
-                string insertQuery = "insert into UserData (Id, UserName, EMail, Password, Age) values (@ID, @uname, @email, @pass, @age)";
+                string insertQuery = "insert into UserData (UserName, EMail, Password, Age, Name, City, Profession, Religion, Ethnicity, Smoke, Drink, FavoriteFood, Heading, Description, Zip, State) values (@uname, @email, @pass, @age, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)";
                 SqlCommand com = new SqlCommand(insertQuery, conn);
-                com.Parameters.AddWithValue("ID", newGUID.ToString());
                 com.Parameters.AddWithValue("@uname", txt_userName.Text);
                 com.Parameters.AddWithValue("@email", txt_eMail.Text);
                 com.Parameters.AddWithValue("@pass", txt_password.Text);
@@ -49,12 +46,18 @@ public partial class Registration : System.Web.UI.Page
 
                 //execute query
                 com.ExecuteNonQuery();
+
+                //create user folder
+                Directory.CreateDirectory(Server.MapPath("~/Data/") + txt_userName.Text + ("/"));
+
                 Response.Redirect("Dash.aspx");
                 Response.Write("Registration is successful!");
 
+                
+                
                 conn.Close();
 
-
+                
 
             }
             catch (Exception ex){

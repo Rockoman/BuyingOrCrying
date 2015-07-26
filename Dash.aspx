@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:Label ID="lbl_welcome" runat="server" Text="Hello... "></asp:Label>
     <br />
+    <asp:Label ID="lbl_test" runat="server" Text="Label"></asp:Label>
     <br />
     <br />
     <br />
@@ -11,8 +12,45 @@
             <h3 class="newhead">HEADLINE</h3>
             <asp:TextBox ID="txt_headline" runat="server" Width="100%"></asp:TextBox>
         </div>
+    <br />
+    <br />
+    <br />
+        <div class ="profilesurround">
+            <h3 class="newhead">UPLOAD PICTURES</h3>
+                <table style="width: 100%">
+                    <tr>
+                        <td style="width: 219px">
+                            <asp:FileUpload ID="FileUpload1" runat="server" />
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 219px">
+                            <asp:Button ID="btn_upload" runat="server" Text="Upload" style="float: left; margin-left: 1px;" Width="90px" OnClick="btn_upload_Click" />
+                            <asp:Label ID="lbl_pic" runat="server" Text="Label"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/UserProfile.aspx">View Profile</asp:HyperLink>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 219px">&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    </table>
+            <div style="background-color: #374F66">    
+                <asp:Panel ID="Panel1" runat="server" BorderStyle="Dashed" Width="500px">
+                </asp:Panel>
+                <br />
+            </div>
 
-        <br />
+
+        </div>
+
+    <br />
+    <br />
+    <br />
+
         <div class="profilesurround">
             <h3 class="newhead">ABOUT YOU</h3>
             <div id="aboutyoutable" style="color: black">
@@ -134,7 +172,7 @@
                     <tr>
                         <td style="width: 127px; text-align: right">Zip:</td>
                         <td style="width: 186px">
-                            <asp:TextBox ID="txt_zip" runat="server" Width="161px" TextMode="Number"></asp:TextBox>
+                            <asp:TextBox ID="txt_zip" runat="server" Width="161px"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidatorZip" runat="server" ControlToValidate="txt_zip" ErrorMessage="Please enter a zip." ForeColor="Red"></asp:RequiredFieldValidator>
                         </td>
                         <td style="width: 209px; text-align: right">Drink:</td>
@@ -184,7 +222,7 @@
                 </tr>
                 <tr>
                     <td style="width: 205px; text-align: right">
-            <asp:TextBox ID="txt_description" runat="server" Height="89px" TextMode="MultiLine" Width="55%" style="text-align: center; float: left; margin-left: 0px"></asp:TextBox>
+            <asp:TextBox ID="txt_description" runat="server" Height="89px" TextMode="MultiLine" Width="55%" style="float: left; margin-left: 0px"></asp:TextBox>
                     </td>
                     <td style="width: 255px; text-align: left; margin-top: -38px">
                         <asp:Label ID="lbl_error" runat="server" ForeColor="Red"></asp:Label>
